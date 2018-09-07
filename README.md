@@ -4,6 +4,8 @@
 Original FC was for R5 (as of 2005, non-opensource, https://github.com/vladGorbunov/FieldControl-original , see screenshots there)
 
 Current FieldControl is original FC without key checking and R9 main issues eliminated.
+
+TODO: test in R10
   
   ### Creation of your own FieldControl DB
   1. Copy \*.LSS from *includes* folder into Notes program folder 
