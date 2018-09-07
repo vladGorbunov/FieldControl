@@ -1,4 +1,4 @@
-# FieldControl, R9 compatible
+# FieldControl, Notes R9 compatible
 #### <a href="https://github.com/vladGorbunov/FieldControl-original/wiki">FieldControl is a Notes application that allows quick viewing, modifing, deletiting and creating fields in Notes documents in a convenient way. The main purpose of FieldControl is to modify fields that cannot be modified via existing forms...</a>
 
 Original FC was for R5 (as of 2005, non-opensource, https://github.com/vladGorbunov/FieldControl-original , see screenshots there)
@@ -15,5 +15,5 @@ This FC is original FC without key checking and R9 main issues eliminated.
  ### Use in previous releases of IBM Notes
   1. Create your own FieldControl in R9
   1. Make a copy of FieldControl DB via IBM Notes, explicitly specifying R5 ODS (specify ns5 extension for the new copy, like FieldControl.ns5)
-  1. Use this \*.ns5 DB in any release, starting from R5
+  1. Use this \*.ns5 DB in any Notes release, starting from R5
   
