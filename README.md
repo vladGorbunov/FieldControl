@@ -1,8 +1,8 @@
-# FieldControl
-Sources for FieldControl<BR>
-  R9 compatibility testing in progress
-<br>
-Original FC (as of 2005, non-opensource) is here https://github.com/vladGorbunov/FieldControl-original (see screenshots there)
+# FieldControl, R9 compatible
+#### <a href="https://github.com/vladGorbunov/FieldControl-original/wiki">FieldControl is a Notes application that allows quick viewing, modifing, deletiting and creating fields in Notes documents in a convenient way. The main purpose of FieldControl is to modify fields that cannot be modified via existing forms...</a>
+
+Original FC was for R5 (as of 2005, non-opensource, https://github.com/vladGorbunov/FieldControl-original , see screenshots there)
+This FC is original FC without key checking and R9 main issues eliminated.
   
   ### Creation of your own FieldControl DB
   1. Open Domino Designer
