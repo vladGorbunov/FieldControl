@@ -5,6 +5,7 @@ Original FC was for R5 (as of 2005, non-opensource, https://github.com/vladGorbu
 This FC is original FC without key checking and R9 main issues eliminated.
   
   ### Creation of your own FieldControl DB
+  1. Copy \*.LSS from *include* folder into Notes program folder 
   1. Open Domino Designer
   1. Menu->Window->Show Eclipse Views->Navigator
   1. In Navigator -> click RMB->New->Project->General->Project->Next->uncheck "Use default location"->Browse->select folder with project files (like ReadMe.md)->OK->Fill in Project name->Finish
