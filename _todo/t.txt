@@ -1,0 +1,9 @@
+Menu->View->Toolbar-> uncheck "Show Toolbars Only Whnen Editing"
+Toolbar Icons (Smart Icons) looks poorly downsized
+
+Menu->Window->Show Eclipse Views->Navigator
+In Navigator 
+	click RMB->New->Project->General->Project->Next->uncheck "Use default location"->Browse->select folder with project files (like ReadMe.md)->OK->Fill in Project name->Finish
+	Select project created on previos step->click RMB->Team Development->associate with new NSF->Fill in new DB name->Finish
+
+Default otions nneded
