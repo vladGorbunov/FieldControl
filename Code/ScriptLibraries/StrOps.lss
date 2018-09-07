@@ -1,0 +1,176 @@
+'++LotusScript Development Environment:2:5:(Options):0:74
+Option Public
+Option Declare
+Use "dPrint"
+
+' Common string operation library
+' STRExplode and STRImplode are from R5 bookmark.ntf
+' print debug info only if debugLevel>debugVerbose+5
+
+'++LotusScript Development Environment:2:5:(Forward):0:1
+Declare Function replaceChars(charToFind As String,Byval targetString As String, substr As String) As String
+Declare Function min(a As Long, b As Long) As Long
+Declare Function max(a As Long, b As Long) As Long
+Declare Function STRExplode( Byval strValue As String, strDelimiter As String, bBlanks As Variant) As Variant
+Declare Function STRImplode( vValues As Variant, strDelimiter As String) As String
+Declare Function ArrFromVar(a)
+
+'++LotusScript Development Environment:2:5:(Declarations):0:10
+Dim elems As Variant
+Dim str2eval As String
+
+
+'++LotusScript Development Environment:2:1:replaceChars:1:8
+Function replaceChars(charToFind As String,Byval targetString As String, substr As String) As String
+' rev 17/10/2004
+' Replaces <charToFind> in <targetString> by <substr> and returns result
+' Calls that verify this func:
+'	Print replaceChars("+++","+++12++34+++567890+++","--") ' produces '--12++34--567890--'
+'	Print replaceChars("++",   "++1234++56+++7890++"   ,"--") ' produces '--1234--56--+7890--'
+'	Print replaceChars("++",   "++12+++34++567890++"   ,"---") ' produces '---12---+34---567890---'
+'	Print replaceChars("+",   "++12+++34++567890++"   ,"---") ' produces '------12---------34------567890------'
+	
+	Dim curPos As Integer
+	dPrint debugVerbose+5,"replaceChars < charToFind+~+Cstr(Len(targetString))+~+targetstring+~+substr:", charToFind+"~"+Cstr(Len(targetString))+"~"+targetstring+"~"+substr
+	
+	curPos=Instr(targetString,charToFind)
+	dPrint debugAll,"replaceChars"," place found at:"+Cstr(curPos)
+	While (curPos>0)  And (Len(targetString)>0) 
+		Select Case curPos
+		Case 1
+			dPrint debugAll,"replaceChars", "Case 1"
+			targetString=substr & Right(targetString,Len(targetString)-Len(charToFind))
+		Case Len(targetString)-Len(charToFind)+1
+			dPrint debugAll,"replaceChars", "Case 2"
+			targetString=Left(targetString,curPos-1) & substr 
+		Case Else
+			dPrint debugAll,"replaceChars", "Case 3"
+			targetString=Left(targetString,curPos-1) & substr & Right(targetString,Len(targetString)-curPos-Len(charToFind)+1)                              
+		End Select           
+		dPrint debugAll,"replaceChars"," new string:"+targetString
+' rev 17/10/2004	
+'		curPos=Instr(curPos+max(Len(charToFind),Len(substr)),targetString,charToFind)
+		curPos=Instr(1,targetString,charToFind)
+		dPrint debugAll,"replaceChars"," place found at:"+Cstr(curPos)
+	Wend
+	replaceChars=targetString
+	dPrint debugVerbose+5,"replaceChars >  Cstr(Len(targetString))+~+targetstring:", Cstr(Len(targetString))+"~"+targetstring
+End Function
+'++LotusScript Development Environment:2:1:split:0:8
+%REM
+Function split(Byval aStr As String, Byval delim As String) As Variant
+' Returns array of strings builded from <aStr> by splitting it using chars in <delim>
+' This is wrrapper around usual @EXPLODE	
+' Notes: CRLF are always converted to space by @explode. Consequntive occurences of delims in aStr are ignored. 
+' Note: If "" delim specified, used default @explode delimiters (space, comma, CRLF, semicolon). Use Uchr(160) as empty arg (?)
+'%REM
+code that verify this func:
+Dim ttt As Variant
+ttt=split(|ab
+c,abc"def,def""!!""ghi|,{"!})
+	Print ttt(0) ' prints 'ab c,abc'
+	Print ttt(1) ' prints 'def,def'
+	Print ttt(2) ' prints 'ghi'
+'%END REM
+	dPrint debugVerbose+5,"split < ", aStr+"~"+delim
+	aStr=replaceChars({"},aStr,{\"})
+	delim=replaceChars({"},delim,{\"})
+	str2eval=|@explode("| + aStr + |";"| + delim + |")|
+	dPrint debugAll,"split ", " string to eval:"+str2eval
+	elems=Evaluate(str2eval)
+	split=elems
+	dPrint debugVerbose+5,"split > Ubound(split):", Ubound(split)
+End Function
+%END REM
+
+'++LotusScript Development Environment:2:1:min:1:8
+Function min(a As Long, b As Long) As Long
+	If a < b Then
+		min = a
+	Else
+		min = b
+	End If
+End Function
+'++LotusScript Development Environment:2:1:max:1:8
+Function max(a As Long, b As Long) As Long
+	If a < b Then
+		max = b 
+	Else
+		max = a
+	End If
+End Function
+'++LotusScript Development Environment:2:1:STRExplode:1:8
+Function STRExplode( Byval strValue As String, strDelimiter As String, bBlanks As Variant) As Variant
+'** This function takes a string and converts it to an array, based on a delimiter
+	
+'** Parameters:
+'**strValue- the string to explode
+'**strDelimiter- the delimiter
+'**bBlanks- a boolean value, pass true to have blanks placed in array when two delimiters have nothing between them
+'**                                          pass false to ignore the blanks
+	
+	Dim strTemp As String
+	Dim strValues() As String
+	Dim iPlace As Integer
+	Dim idelimLen As Integer
+	Dim iValueCount As Integer
+	
+	idelimLen = Len( strDelimiter)
+	
+	iPlace = Instr( strValue, strDelimiter)
+	
+	Do While iPlace <> 0
+		
+		If (iPlace <> 1 Or bBlanks) Then
+			Redim Preserve strValues(iValueCount) As String
+			strValues(iValueCount) = Left( strValue, iPlace - 1)
+			iValueCount = iValueCount + 1
+		End If
+		
+		strValue = Right( strValue, Len( strValue) - iPlace - idelimLen + 1)
+		
+		iPlace = Instr( strValue, strDelimiter)
+		
+	Loop 
+	
+	If Len( strValue ) <> 0 Or bBlanks Then
+		Redim Preserve strValues(iValueCount) As String 
+		strValues(iValueCount) = strValue
+	Elseif iValueCount = 0 Then
+		Redim Preserve strValues(iValueCount) As String
+	End If
+	
+	STRExplode = strValues
+	
+End Function
+'++LotusScript Development Environment:2:1:STRImplode:1:8
+Function STRImplode( vValues As Variant, strDelimiter As String) As String
+	
+	If Isarray( vValues) Or Islist( vValues) Then
+		Dim strTemp As String
+		
+		Forall vX In vValues
+			strTemp = strTemp & Cstr( vX) & strDelimiter
+		End Forall
+		
+		If Len( strTemp) <> 0 Then
+			STRImplode = Left( strTemp, Len(strTemp) - Len( strDelimiter))
+		End If
+		
+	Else
+		STRImplode = Cstr( vValues)
+	End If
+	
+End Function
+'++LotusScript Development Environment:2:1:ArrFromVar:1:8
+Function ArrFromVar(a)
+'Always returns array regardless of input parameter. If input is arra, return it. If input isn't array, return array with single element (input)
+' This function is to use with ArrayGetIndex(ArrFromVar(unknownTypeVar),var2)	
+	Dim b(1)
+	If Isarray(a) Then
+		ArrFromVar=a
+	Else
+		b(0)=a
+		ArrFromVar=b
+	End If
+End Function

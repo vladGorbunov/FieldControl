@@ -1,0 +1,129 @@
+'++LotusScript Development Environment:2:5:(Options):0:74
+Option Public
+Option Declare
+Use "strOps"
+'++LotusScript Development Environment:2:5:(Forward):0:1
+Declare Sub Initialize
+
+'++LotusScript Development Environment:2:5:(Declarations):0:10
+Const KOK=1000 ' ключ рабочий
+Const KOKT=100 ' ключ рабочий, триальный
+Const KEX=30 ' ключ просрочен
+Const KIN=20 ' ключ неправильный
+Const KNF=0 ' не найден ключ
+Dim KSTA As Long ' состояние ключа
+Dim KBEFORE
+Const кэвглавный=123456789 - 123321 ' ключ этой версии, специально как Long
+
+' same as in keymake
+Const LIC_PERS = "P"
+Const LIC_CONS = "C"
+Const LIC_WORK = "W"
+Const LIC_CORP = "R"
+Const LIC_NONC = "N"
+Const LIC_TRIAL = ""
+'++LotusScript Development Environment:2:2:Initialize:1:10
+Sub Initialize
+	Dim ses, кэв, license$
+	Set ses= New NotesSession
+			' ключевое начало
+	кэв = 123321 + кэвглавный ' на всякий случай
+	Dim datstr$, usern$, regKey1$, regDate$, keyEval, regKeys, maxKSTA&
+'	regKey = ses.GetEnvironmentString("fcRegKey")	
+	
+	maxKSTA = KNF
+	
+	''timebomb
+	'' see also install steps in About
+	datstr = Cstr( Year(Today)) + Right("0" + Cstr(Month(Today)),2) + Right("0" + Cstr(Day(Today)), 2)
+	regDate = 	"2005"
+	regDate = regDate + "10" 
+	regDate = regDate + "01"
+	Print "regDate = "; regdate, "datstr = "; datstr
+	If datstr > regdate Then KSTA = KEX : Else KSTA = KOKT
+	Exit Sub
+	
+	On Error Resume Next
+	regKeys = 	ses.currentDatabase.getProfileDocument("Registration").getFirstItem("RegKeys").values
+	If Isempty(regKeys) Then 
+		
+	Else
+		On Error Goto 0
+		Forall regKey In regKeys 
+			If regKey >"" Then
+				regKey = Trim(regKey)
+				regDate = ""
+				license = ""
+				If Len(regKey)>32 Then
+					If Len(regKey) = 33 Then
+						license = Ucase(Right(regKey,1))
+					Else
+						license = LIC_TRIAL
+						regDate = Right(regKey,8)
+					End If
+				End If
+				regkey = Left(regKey,32)
+				'Print regdate, regkey
+				
+				Forall usern1 In ses.UserNameList
+					Select Case license
+					Case LIC_PERS, LIC_NONC
+						usern = Fulltrim(Strleft(Ucase(usern1.canonical + "/C="),"/C="))
+'						Print usern,1
+						usern = replaceChars("CN=", usern, "")
+						usern = replaceChars("/OU=", usern, "")
+						usern = replaceChars("/O=", usern, "")					
+'						Print usern,2
+					Case LIC_CONS, LIC_TRIAL
+						usern = Fulltrim(Strleft(Ucase(usern1.common + "/"),"/"))
+					Case LIC_CORP
+						usern = Fulltrim(Strrightback(Ucase( "o=" + usern1.canonical ) ,"O=")) 
+					Case LIC_WORK
+						usern = Fulltrim(Strright(Ucase( usern1.canonical ) ,"OU=")) 
+						usern = replaceChars("/OU=", usern, "")
+						usern = replaceChars("/O=", usern, "")		
+						If usern ="" Then Print "WorkGroup license cannot be used with this username!"
+					Case Else
+						Print "Non supported license"
+					End Select
+					
+					usern = replaceChars(".", usern, "")
+					usern = replaceChars(" ", usern, "")
+					
+					'Print |@explode(@password("| + usern + regDate + Cstr(кэв) + |"),")(")|
+					keyEval = Evaluate(|@explode(@password("| + usern + license + regDate + Cstr(кэв) + |");")(")|)
+					'Print keyEval(0)
+					If regKey = keyEval(0) Then
+						If regDate>"" Then
+							datstr = Cstr( Year(Today)) + Right("0" + Cstr(Month(Today)),2) + Right("0" + Cstr(Day(Today)), 2)
+							If datstr> regDate Then 
+								'Print "KEY Expired"
+								KSTA = KEX
+								Exit Forall
+							Else
+								'Print "KEY OK (trial)"
+								KBEFORE = Dateserial(Left(regdate,4), Mid(regdate,5,2),Right(regdate,2))
+								KSTA = KOKT
+								Exit Forall
+							End If
+						Else
+							'Print "KEY OK"
+							KSTA = KOK
+							Exit Forall
+						End If
+					Else 
+						'Print "KEY INVALID"
+						KSTA = KIN
+					End If
+				End Forall
+			Else
+				'Print "KEY NOT FOUND"
+				KSTA = KNF
+			End If
+			'Print KSTA, maxKSTA
+			maxKSTA = max(KSTA,maxKSTA)
+		End Forall
+		KSTA = maxKSTA
+	End If
+	' ключевой конец
+End Sub

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="C62566C60041A463" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="392" sequence="18" unid="875D0D49AA45241F46256BE500663E6F">
+<created><datetime>20020628T003646,55+06</datetime></created>
+<modified><datetime dst="true">20040801T140540,37+07</datetime></modified>
+<revised><datetime dst="true">20040801T140540,36+07</datetime></revised>
+<lastaccessed><datetime dst="true">20040801T140540,36+07</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20031227T012240,76+07</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Vladislav V Gorbunov/O=COMMED/C=RU</name><name>CN=tester/O=tester</name><name>CN=Vladislav Gorbunov/O=Fieconde</name><name>CN=Vladislav Gorbunov/O=FieldControl Development</name></updatedby>
+<item name="$TITLE" sign="true"><text>LocationOps</text></item>
+<item name="$Flags"><text>s34Q</text></item>
+<item name="$PublicAccess"><text>1</text></item>
+
+</note>

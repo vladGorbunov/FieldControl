@@ -1,0 +1,46 @@
+'++LotusScript Development Environment:2:5:(Options):0:74
+Option Public
+Use "dPrint"
+Option Declare
+'++LotusScript Development Environment:2:5:(Forward):0:1
+Declare Function getCurrentLocation(NAB As notesDatabase) As NotesDocument	
+Declare Function get1stWSNab As notesdatabase
+Declare Function getBookMarkDB As notesDatabase
+Declare Sub Initialize
+
+'++LotusScript Development Environment:2:5:(Declarations):0:10
+Private ses As notessession
+'++LotusScript Development Environment:2:1:getCurrentLocation:1:8
+Function getCurrentLocation(NAB As notesDatabase) As NotesDocument	
+	Dim buf As String	
+	buf=ses.getEnvironmentString("Location",True)
+	dPrint debugCall,"getCurrentLocation","Found Location in Notes.INI: "+buf
+	buf=Mid(buf,Instr(buf,",")+1,Instr(Instr(buf,",")+1,buf,",")-Instr(buf,",")-1)
+	dPrint debugCall,"getCurrentLocation","...its ID: "+buf
+	Set getCurrentLocation=NAB.GetDocumentByID(buf) 
+End Function
+
+'++LotusScript Development Environment:2:1:get1stWSNab:1:8
+Function get1stWSNab As notesdatabase
+	Dim dname$, NAB
+	dname=ses.GetEnvironmentString( "names" , True )
+	dname=Strleft(dname+",",",")  ' selects 1st NAB from cascading nabs
+	dPrint debugCall,"get1stWSNab","1st WS NAB name:"+dname
+	If dname = "" Then dname = "names.nsf"
+	Set NAB = ses.getdatabase("",dname) 
+	If Not NAB.isOpen Then Call NAB.open("","")
+	Set get1stWSNab= NAB
+End Function
+'++LotusScript Development Environment:2:1:getBookMarkDB:1:8
+Function getBookMarkDB As notesDatabase
+	Dim location As notesdocument, nab As notesdatabase
+	Set nab=get1stWSNAB
+	Set location=getCurrentLocation(nab)
+	Set getBookMarkDB=ses.Getdatabase("",location.bookmarkDB(0)) 
+	If Not getBookMarkDB.isOpen Then Call getBookMarkDB.open("","")
+	dPrint debugCall,"getBookMarkDB","returns Bookmark DBname: "+getBookMarkDB.filename
+End Function
+'++LotusScript Development Environment:2:2:Initialize:1:10
+Sub Initialize
+	Set ses=New notessession
+End Sub

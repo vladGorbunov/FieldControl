@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C62566C60041A463" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="576" sequence="2" unid="06E2E6653C4B27A446256B17002ED53E">
+<created><datetime>20011203T143132,46+06</datetime></created>
+<modified><datetime dst="true">20031227T012242,94+07</datetime></modified>
+<revised><datetime>20011203T144639,22+06</datetime></revised>
+<lastaccessed><datetime dst="true">20031227T012241,64+07</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20031227T012241,64+07</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Vladislav V Gorbunov/O=COMMED/C=RU</name></updatedby>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$ImagesWide"><number>1</number></item>
+<item name="$ImagesHigh"><number>1</number></item>
+<item name="$ImagesColorize"><number>0</number></item>
+
+<item name="$ImageNames"><textlist><text>tblbckg_y_dark_large.gif</text></textlist></item>
+<item name="$TITLE" sign="true"><textlist><text>tblbckg_y_dark_large.gif</text><text>Dark Yellow (Large)</text></textlist></item>
+<item name="$DesignerVersion"><text>5</text></item></note>

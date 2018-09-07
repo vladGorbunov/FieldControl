@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C62566C60041A463" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="5ba" sequence="1" unid="9A202089D7947684C6256E080058F76A">
+<created><datetime dst="true">20031226T231145,06+07</datetime></created>
+<modified><datetime dst="true">20031227T012243,11+07</datetime></modified>
+<revised><datetime dst="true">20031226T231145,17+07</datetime></revised>
+<lastaccessed><datetime dst="true">20031227T012241,91+07</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20031227T012241,91+07</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Vladislav Gorbunov/O=FieldControl Development</name></updatedby>
+<item name="$TITLE"><text>actn065.gif</text></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+
+
+<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">19981118T132020,00+07</datetime></item>
+<item name="$ImageNames" sign="true"><text>actn065.gif</text></item>
+<item name="$DesignerVersion"><text>6</text></item></note>

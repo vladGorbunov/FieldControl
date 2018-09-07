@@ -1,0 +1,142 @@
+'++LotusScript Development Environment:2:5:(Options):0:74
+Option Public
+Option Declare
+'++LotusScript Development Environment:2:5:(Forward):0:1
+Declare Sub dprint(level As Integer,modName,v1 As Variant)
+Declare Sub Initialize
+Declare Sub Terminate
+Declare Sub ticsPrint()
+Declare Sub ticsInit ' не предусматривает вложенных вызовов!
+
+'++LotusScript Development Environment:2:5:(Declarations):0:10
+'dPrint: 
+
+%REM
+Debug Print.  
+Код для SmartIcon изменяющей текуший уровень отладки:
+ENVIRONMENT commonLibDEBUG:=@Prompt([OKCANCELEDIT];"New debug Level?";"From 1 to 100 (None=1,  Terse=25, Calls=50, Detailed=75, All=100)";@Environment("commonLibDEBUG"));
+ENVIRONMENT commonLibTraceFile:=@Prompt([OKCANCELEDIT];"Trace file name?";"Enter new debug file name (no name=no file)";@Environment("commonLibTraceFile"));
+ENVIRONMENT commonLibTraceFileOverWrite:=@Prompt([OKCANCELEDIT];"Overwrute trace file?";"Type YES or NO (in upper case)";@Environment("commonLibTraceFileOverWrite"));
+1
+%END REM
+
+'%INCLUDE "lsprcval.lss"
+
+Dim debugLevel As Integer          ' Set this var >0 to use in dprint 
+Public a_LastDebugMSG$           ' Insert ©LastDebugMSG$ = ©LastDebugMSG$ in Initialize event of your module to see debug messages in LS Debuger (even if debug level is less than required to print debug message)
+'''Public a_LastModule$
+
+Public Last_Exit_tics As Long		' for %include
+Const debugAll=100
+Const debugNone=1
+Const debugEveryCall=50
+Const debugCall=50
+Const debugCalls=50 
+Const debugDetailed=75 
+Const debugVerbose=75
+Const debugTerse=25
+
+Const Call_begin = "Call_begin.lss"
+Const Call_end = "Call_end.lss"
+
+Private nLog As notesLog
+Private fileLog$
+Private LastTics&
+Private Const TRACE_FILE_VAR="commonLibTraceFile"
+Private Const NO_TRACE_FILE_VAL="-None-"
+Private Const DEBUG_LEVEL_VAR="commonLibDEBUG"
+Private Const TRACE_FILE_OW_VAR="commonLibTraceFileOverWrite"
+Private Const TRACE_FILE_OW_VAL="YES"
+
+Private start_tics&
+
+Const GLOBAL_NO_DPRINT = 1
+
+
+
+
+
+
+'++LotusScript Development Environment:2:2:dprint:1:8
+Sub dprint(level As Integer,modName,v1 As Variant)
+	' выкинуть modname !!!!
+	If  GLOBAL_NO_DPRINT = 1 Then Exit Sub
+%REM
+Debug Print. 
+Печатает var<1..3> заданные как параметры, если указаный level меньше чем заданный DebugLevel.
+DebugLevel -глобальная переменная, её можно задавать в Initialize вашего объекта. Иначе она берётся из notes.ini.
+Параметры: level - уровень отладочных сообщений, modName - имя вызвавшего модуля, v1 - переменная для печати
+Example call:
+dPrint debugCall,"MyModule","Message text"
+%END REM	
+	On Error Resume Next
+	a_LastDebugMSG = Cstr(v1)
+'''	a_LastModule = modName
+	
+	If level<=debugLevel Then
+		Dim tnow&, msg$
+		tnow = Getthreadinfo( 6 )
+		msg = Cstr(Getthreadinfo(10))+": " + Cstr( tnow - lastTics ) + ": "+Cstr(v1)
+		Print msg
+'		nLog.ProgramName = modName ' это неудобно когда выводится имя процедуры разной длины
+		Call nLog.LogAction( msg )
+		lastTics = tnow
+	End If
+	
+End Sub
+'++LotusScript Development Environment:2:2:Initialize:1:10
+Sub Initialize
+	If  GLOBAL_NO_DPRINT = 1 Then Exit Sub
+	On Error Resume Next     
+	Dim ses As New notessession
+	Set ses=New NotesSession
+	
+	
+	Set nLog = New NotesLog( "" ) 
+	fileLog = ses.GetEnvironmentString(TRACE_FILE_VAR)
+	If fileLog="" Or fileLog=NO_TRACE_FILE_VAL Then
+		' make new var in INI
+		nLog.LogActions = False
+		Call ses.setEnvironmentVar(TRACE_FILE_VAR,NO_TRACE_FILE_VAL)
+	Else
+		nLog.LogActions = True		
+	End If
+	
+	Dim fileLogOverWrite$
+	fileLogOverWrite = ses.GetEnvironmentString(TRACE_FILE_OW_VAR)
+	If fileLogOverWrite="" Then
+		nLog.OverwriteFile = True
+		' make new var in INI
+		Call ses.setEnvironmentVar(TRACE_FILE_OW_VAR, TRACE_FILE_OW_VAL)
+	Elseif fileLogOverWrite=TRACE_FILE_OW_VAL Then
+		nLog.OverwriteFile = True
+	Else 
+		nLog.OverwriteFile = False
+	End If
+	If nLog.logActions Then Call nLog.OpenFileLog( fileLog )
+	
+	debugLevel = ses.GetEnvironmentValue(DEBUG_LEVEL_VAR)
+	If debugLevel=0 Then 
+'		debugLevel=Cint(Inputbox( "Select debug level 1-100", "No debug level defined (one time setup)" , "1"))
+		debugLevel=1
+		' make new var in INI
+		Call ses.setEnvironmentVar(DEBUG_LEVEL_VAR,debugLevel)
+	End If
+End Sub
+'++LotusScript Development Environment:2:2:Terminate:1:10
+Sub Terminate
+	If  GLOBAL_NO_DPRINT = 1 Then Exit Sub
+	If Err>0 Then dPrint 2,"dPrint termination"," Last error at:"+Cstr(Erl)+" was: "+Error(Err)+ " (" +Cstr(Err)+ ")"
+	If Not fileLog="" Then
+		dPrint 2,"dPrint termination"," Trace file written to: "+Curdir$+"\"+fileLog
+		Call nLog.Close
+	End If
+End Sub
+'++LotusScript Development Environment:2:2:ticsPrint:1:8
+Sub ticsPrint()
+	Print "...время: " + Cstr(Getthreadinfo( 6 ) - start_tics) + " мс. " + Cstr(Getthreadinfo(10))
+End Sub
+'++LotusScript Development Environment:2:2:ticsInit:1:8
+Sub ticsInit ' не предусматривает вложенных вызовов!
+	start_tics = Getthreadinfo( 6 )
+End Sub

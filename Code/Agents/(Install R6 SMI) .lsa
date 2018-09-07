@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C62566C60041A463'>
+<noteinfo noteid='40e' unid='A9647AF1B5347790C6256DB700596982' sequence='18'>
+<created><datetime dst='true'>20031006T231637,14+07</datetime></created>
+<modified><datetime dst='true'>20040801T140541,06+07</datetime></modified>
+<revised><datetime dst='true'>20040801T140541,05+07</datetime></revised>
+<lastaccessed><datetime dst='true'>20040801T140541,05+07</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20031227T012240,85+07</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Vladislav Gorbunov/O=FieldControl Development</name></updatedby>
+<item name='$AssistVersion'><datetime dst='true'>20040128T005802,26+07</datetime></item>
+<item name='$TITLE' sign='true'><text>(Install R6 SMI) | R6 Install</text></item>
+<item name='$AssistType' sign='true'><number>65413</number></item>
+<item name='$AssistLastRun' sign='true'>
+<rawitemdata type='400'>
+AAAAAAAAAAA=
+</rawitemdata></item>
+<item name='$AssistDocCount' sign='true'><number>0</number></item>
+<item name='$FlagsExt' sign='true'><text/></item>
+<item name='$AssistFlags' sign='true'><text>Es</text></item>
+<item name='$AssistTrigger'><text>4</text></item>
+<item name='$AssistInfo' sign='true'>
+<rawitemdata type='11'>
+AQAEAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+</rawitemdata></item>
+<item name='$AssistQuery' sign='true'>
+<rawitemdata type='f'>
+gQYAAAAA
+</rawitemdata></item>
+<item name='$AssistAction' sign='true'>
+<rawitemdata type='10'>
+gQKF/8IBAAAAALYBAAAnKytMb3R1c1NjcmlwdCBEZXZlbG9wbWVudCBFbnZpcm9ubWVudDoyOjU6
+KE9wdGlvbnMpOjA6NzQKT3B0aW9uIFB1YmxpYwpPcHRpb24gRGVjbGFyZSAgClVzZSAiaW5zdGFs
+bFI2U21hcnRJY29ucyIgIAonKytMb3R1c1NjcmlwdCBEZXZlbG9wbWVudCBFbnZpcm9ubWVudDoy
+OjU6KEZvcndhcmQpOjA6MQpEZWNsYXJlIFN1YiBJbml0aWFsaXplCgonKytMb3R1c1NjcmlwdCBE
+ZXZlbG9wbWVudCBFbnZpcm9ubWVudDoyOjU6KERlY2xhcmF0aW9ucyk6MDoyCgonKytMb3R1c1Nj
+cmlwdCBEZXZlbG9wbWVudCBFbnZpcm9ubWVudDoyOjI6SW5pdGlhbGl6ZToxOjEwClN1YiBJbml0
+aWFsaXplCglDYWxsIG1ha2VTbWFydEljb25zICAKCU1lc3NhZ2Vib3ggIkZpZWxkQ29udHJvbCBo
+YXMgaW5zdGFsbGVkLCBwbGVhc2UgcmVzdGFydCBOb3RlcyBjbGllbnQuIgpFbmQgU3ViAAA=
+</rawitemdata></item>
+<item name='$Restricted' sign='true'><number>1</number></item>
+<item name='$Flags'><text>fL3</text></item>
+<item name='$DesignerVersion'><text>6</text></item>
+<item name='$AssistRunInfo' summary='true'>
+<rawitemdata type='3'>
+BgABAAAACACSBgAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAAsgAAAAAAAAAAAAAAAAAAABAAAAAA
+AAAAcGM2ABJwJcYAAAAA+vgmAONuJcaQ82QACG4lxgAAAAAAAAAAAAAAAAAAAAAAAAAAU3RhcnRl
+ZCBydW5uaW5nIGFnZW50ICcoSW5zdGFsbCBSNiBTTUkpIHwgUjYgSW5zdGFsbCcgb24gMzEuMDUu
+MjAwNSAxNjo1Mzo1OA0KUmFuIExvdHVzU2NyaXB0IGNvZGUNCkRvbmUgcnVubmluZyBhZ2VudCAn
+KEluc3RhbGwgUjYgU01JKSB8IFI2IEluc3RhbGwnIG9uIDMxLjA1LjIwMDUgMTY6NTQ6MDQNCgAN
+CpsTv1CwVrfuqLRiAChuJcaqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqq
+</rawitemdata></item>
+<item name='$AssistAction_Ex' sign='true'>
+<rawitemdata type='14'>
+gQKF/8YGAAAAALoGAAABAAACTFNPQgMAFAhlbgAABAAHACIAAAAAAHwC4AEYAAAABAAcAewBAAAA
+ACwA//8gAEAAAAAMAVwAAAAAAAAAAQAAABgAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+GAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAALgAuAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAC4ALgAAAAAAAAAAAAAAAAAAgAAACgB7AEAAAAAAAAAAAAAAAAAAAAAKAEoAewB
+7AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAFAExvdHVzIFByb2R1Y3QAAABWMC4w
+AAAAAAAAAAAAAAAAAAAAAAAAAAAiAAAAAAAAAHwCAADgAQAAAAAAAAAAAAABAAAAAAAAAAAAAAAA
+AAAAAQAAAAAAAAAAAAAABAAAAFczMkmAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAADAOQBAAAAALgBDQAkAEEAUwBTAEkAUwBUAEEAQwBUAEkATwBOAAAA
+dAADAE4ARQBXAAAAiAAGAEQARQBMAEUAVABFAAAAAACkAQoASQBOAEkAVABJAEEATABJAFoARQAA
+AAAAvAAJAFQARQBSAE0ASQBOAEEAVABFAAAAkAAGAE8AQgBKAEUAQwBUAAAAAAD//wAAAAAAAOgA
+EwBpAG4AcwB0AGEAbABsAFIANgBTAG0AYQByAHQASQBjAG8AbgBzAAAAhAETAEkATgBTAFQAQQBM
+AEwAUgA2AFMATQBBAFIAVABJAEMATwBOAFMAAAD//w4ATQBBAEsARQBTAE0AQQBSAFQASQBDAE8A
+TgBTAAAAAAD//zgARgBpAGUAbABkAEMAbwBuAHQAcgBvAGwAIABoAGEAcwAgAGkAbgBzAHQAYQBs
+AGwAZQBkACwAIABwAGwAZQBhAHMAZQAgAHIAZQBzAHQAYQByAHQAIABOAG8AdABlAHMAIABjAGwA
+aQBlAG4AdAAuAAAAAAD//w0ATgBPAFQARQBTAEQAQQBUAEEAQgBBAFMARQAAAP//BgAlAEwAUwBY
+AEIARQAAAAAA//8RAE4ATwBUAEUAUwBPAFUAVABMAEkATgBFAEUATgBUAFIAWQAAAAUAgAIAAAAA
+XZkxJhgAAAAAAMAAkDCKAwAAAAAAAAAACAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAAADAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAhAAQAmAMAAAgAQAAAAAAA7AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoACQIoAQkC7AEJAuwBAQAJAuwBBgAa
+AAAAqAH//wAAAAAQAAAA7AEAAIgBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhQTKe0uaRC/XQDdARGGtwAAAAAAAAAAAAAA
+AAAAAABkAAAAAAAAAAAAAAAAAAAAAgAcAbgBAAAAAAAAAgABAP//AAASABQAAAAAAP//CQIAAAAA
+EgQAAAAAKAEcAf//AAAAAAYAAwAAAAkCKAEJAigBBggGCBkAEAAAAAAAAAC8AQAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAU
+EyntLmkQv10A3QERhrcAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAAAAAAAIAHAEAAAAAKAEA
+AAIAAQD//wAABAAmAAAAAAA6AAAaBADSlAAdAAAaDAApuAAjGg0AfRABm4CABgcaDgAdAgAAABEA
+FAAAAAAA//8BAAMABQAAAAgARAAKAAoAAAA=
+</rawitemdata></item></note>
+

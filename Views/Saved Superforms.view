@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C62566C60041A463'>
+<noteinfo noteid='562' unid='027C7E9B130C1007C625687A00293B91' sequence='17'>
+<created><datetime dst='true'>20000203T143022,25+07</datetime></created>
+<modified><datetime dst='true'>20040801T140542,88+07</datetime></modified>
+<revised><datetime dst='true'>20040801T140542,87+07</datetime></revised>
+<lastaccessed><datetime dst='true'>20040801T140542,87+07</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20031227T012241,38+07</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Vladislav V Gorbunov/O=COMMED/C=RU</name><name>CN=Vladislav V Gorbunov/O=Fieconde</name><name
+>CN=tester/O=tester</name><name>CN=Vladislav Gorbunov/O=Fieconde</name><name
+>CN=Vladislav Gorbunov/O=FieldControl Development</name></updatedby>
+<item name='$TITLE' sign='true'><text>Saved Superforms</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+fgECABQAAgAkM34AAQACAE5UogIDAAcADAAFAAkwUzBFAAIAagACACQ2BQAIAHdhc1NhdmVkAQAB
+ADEACgKvAEoAEAAAAAAAAAAAAElArgA6AAUACAB3YXNTYXZlZAEAAQAyAAoCrwAiABAAAAAAAAAA
+AMBTQK4AEgAAAAAAAAAAAAAArgAEALUFAwAHAAwABQAJMFMwRQACAAwAAgAkMGkAAwACABwABwBl
+bnZiYXNlAAUABwBlbnZiYXNlAAMAAgAgAAoAZGlzcE5vdGVJRAUACgBkaXNwTm90ZUlEAwACACAA
+CgBkb2NTdWJqZWN0BQAKAGRvY1N1YmplY3QDAAUAUgBNAAkAAgACAAIABwAJAAoACgAJAAQAJDMk
+NiQwZW52YmFzZWVudnNlcnZlcmRpc3BOb3RlSURkb2NTdWJqZWN0JENvbmZsaWN0JFJFRgAEAAQA
+AAAeAAUABABmb3JtAQAGAGlkTGlzdAoCBAAeAQMABwAKAAQACUwxUw==
+</formula></item>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+GAACAABEAWYAAAACAAdmAAIAAgAkMyQw
+</rawitemdata></item>
+<item name='$Collation1' summary='true'>
+<rawitemdata type='2'>
+DwABAABEBmYAAAACACQw
+</rawitemdata></item>
+<item name='$Collation2' summary='true'>
+<rawitemdata type='2'>
+DwABAABEB2YAAAACACQw
+</rawitemdata></item>
+<item name='$Collation3' summary='true'>
+<rawitemdata type='2'>
+FAABAABEAGYAAAAHAGVudmJhc2U=
+</rawitemdata></item>
+<item name='$Collation4' summary='true'>
+<rawitemdata type='2'>
+FAABAABEAWYAAAAHAGVudmJhc2U=
+</rawitemdata></item>
+<item name='$Collation5' summary='true'>
+<rawitemdata type='2'>
+FgABAABEAGYAAAAJAGVudnNlcnZlcg==
+</rawitemdata></item>
+<item name='$Collation6' summary='true'>
+<rawitemdata type='2'>
+FgABAABEAWYAAAAJAGVudnNlcnZlcg==
+</rawitemdata></item>
+<item name='$Collation7' summary='true'>
+<rawitemdata type='2'>
+FwABAABEAGYAAAAKAGRpc3BOb3RlSUQ=
+</rawitemdata></item>
+<item name='$Collation8' summary='true'>
+<rawitemdata type='2'>
+FwABAABEAWYAAAAKAGRpc3BOb3RlSUQ=
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQAHAAcAiEgAAFZDDQACAAYAIgAAAD8AAQAACAAAAAAAAAAAAAICAAAAVkNAAAIAAAB4AAAACgAB
+AAAKAAAAAAAAAAAAAgIAAABWQwXDAgAHAA4AAABgAAEAAAgAAAAAAAAAAAACAgAAAFZDAAMHAAgA
+HgAAAIkAAQAACAAAAAAAAAAAAAICAAAAVkMAAwkABgAAAAAAiAABAAAIAAAAAAAAAAAAAgIAAABW
+QwADCgAHACIAAABZAAEAAAgAAAAAAAAAAAACAgAAAFZDAAAKABYAIgAAAFAAAQAACAAAAAAAAAAA
+AAICAAAAJDNOb3RlSUQiAAIAFAACACQzfgABAAIATlSiAgMABwAMAAUACTBTMEUAJDZ4AAIAagAC
+ACQ2BQAIAHdhc1NhdmVkAQABADEACgKvAEoAEAAAAAAAAAAAAElArgA6AAUACAB3YXNTYXZlZAEA
+AQAyAAoCrwAiABAAAAAAAAAAAMBTQK4AEgAAAAAAAAAAAAAArgAEALUFAwAHAAwABQAJMFMwRQAk
+MENyZWF0ZWQOAAIADAACACQwaQADAGVudmJhc2VEYXRhQmFzZR4AAgAcAAcAZW52YmFzZQAFAAcA
+ZW52YmFzZQADAGVudnNlcnZlclNlcnZlcmRpc3BOb3RlSUROb3RlIElEIgACACAACgBkaXNwTm90
+ZUlEBQAKAGRpc3BOb3RlSUQDAGRvY1N1YmplY3REb2MgU3ViamVjdC9UaXRsZS9Gb3JtIgACACAA
+CgBkb2NTdWJqZWN0BQAKAGRvY1N1YmplY3QDACYAAQAAAAEBAAkBAAAKAQEOCgAALwCtKwIAAQAB
+AAAAAAAAAAAAV0MBAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFdD
+AQEACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABXQwEAAAgAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAV0MBAAAIAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAFdDAQAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAABXQwEAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+V0MBAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$Flags'><text>Y</text></item></note>
+

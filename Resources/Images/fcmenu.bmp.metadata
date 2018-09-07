@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C62566C60041A463" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="5e2" sequence="2" unid="FE42E241F70C2D24C6256DAC004FA3BA">
+<created><datetime dst="true">20030925T212952,58+07</datetime></created>
+<modified><datetime dst="true">20031227T012243,21+07</datetime></modified>
+<revised><datetime dst="true">20031001T001456,44+07</datetime></revised>
+<lastaccessed><datetime dst="true">20031227T012241,97+07</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20031227T012241,97+07</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Vladislav V Gorbunov/O=COMMED/C=RU</name><name>CN=tester/O=tester</name></updatedby>
+<item name="$ImagesWide"><number>1</number></item>
+<item name="$ImagesHigh"><number>1</number></item>
+<item name="$ImagesColorize"><number>0</number></item>
+<item name="$TITLE" sign="true"><textlist><text>fcmenu.bmp</text><text>FieldControl Bookmarks</text></textlist></item>
+<item name="$DesignerVersion"><text>5</text></item>
+<item name="$ImageNames"><text>fcmenu.gif</text></item>
+<item name="designToCopy"><text>1</text></item>
+
+
+<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20030925T212402,33+07</datetime></item>
+<item name="$Flags"><text>34CiQ</text></item></note>

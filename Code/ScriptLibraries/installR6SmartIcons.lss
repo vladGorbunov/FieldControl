@@ -1,0 +1,111 @@
+'++LotusScript Development Environment:2:5:(Options):0:74
+Option Public
+Use "dPrint" 
+Use "outlineOps" 
+Use "locationOps" 
+Option Declare 
+'++LotusScript Development Environment:2:5:(Forward):0:1
+Declare Sub Initialize
+Declare Sub makeSmartIcons
+Declare Function isFCSETInstalled
+Declare Sub writeINIvars
+Declare Sub copyDesignToDB(DB As notesdatabase)
+
+'++LotusScript Development Environment:2:5:(Declarations):0:10
+Dim ses As notessession
+
+Dim NAB As notesdatabase
+Dim fcdb As NotesDatabase
+Public outlineTo As NotesOutline
+Public outlineFrom As NotesOutline
+
+Const outline_name_user="UserToolbar"
+Const outline_name_FC="UserToolbarFrom"
+
+'++LotusScript Development Environment:2:2:Initialize:1:10
+Sub Initialize
+'	Print "installR6SmartIcons INIT"
+	Set ses=New notessession 
+	
+	
+	Set fcdb = ses.CurrentDatabase
+	Dim bookmarkDB As notesdatabase
+	Set bookmarkDB=getBookMarkDB
+'	Print 1, bookmarkDB.Title
+	Set outlineTo = BookMarkDB.GetOutline(outline_name_user)
+'	Print 2, outlineTo.Name
+	Set outlineFrom = fcdb.GetOutline(outline_name_FC)
+'	Print 4, outlineTo.Name
+	
+End Sub
+'++LotusScript Development Environment:2:2:makeSmartIcons:1:8
+Sub makeSmartIcons
+'	Print "ms0"
+	If outlineTo Is Nothing Then 'в r6.0.1 глючит
+		Dim bookmarkDB As notesdatabase
+		Set bookmarkDB=getBookMarkDB
+'		Print 11, bookmarkDB.Title
+		Set outlineTo = BookMarkDB.GetOutline(outline_name_user)
+'		Print 12, outlineTo.Name
+	End If
+'	Print "ms", outlineTo.Name
+	Call writeINIvars
+	If Not isFCSETInstalled Then
+		Call copyDesignToDB(getBookMarkDB)	
+'		Print "aft is inst", outlineTo.Name	
+		Dim placeToEntry As notesoutlineentry, sysSpacerEntry As notesoutlineentry
+		
+		Set placeToEntry=searchOldBMs(outlineTo, outlineTo.GetFirst, "No Icon Set", "No Icon Set", 0,-1)
+		If placeToEntry Is Nothing Then
+			Set placeToEntry = outlineTo.GetLast()
+		End If
+		Dim counter%, store1Place As notesoutlineentry
+		
+		counter=copyEntries(outlineFrom,outlineTo,outlineFrom.GetFirst,placeToEntry,False)
+		dPrint debugCall,"makeBookmarks","Copied root entries:"+Cstr(counter)
+		
+		Call outlineTo.save()
+	Else
+		Dim msg$
+		msg = "FieldControl Smart Icons set already installed, Smart Icons set installation skipped. NOTES.INI updated."
+		Messagebox msg
+'		Print msg
+	End If
+End Sub
+
+'++LotusScript Development Environment:2:1:isFCSETInstalled:1:8
+Function isFCSETInstalled
+		'  проверкa на наличие уже уст. смартиконки
+	Dim fcset
+	' имя забита как констаната - не есть рулез
+'	Print "is inst1", outlineTo.Name	
+	Set fcset = searchOldBMs(outlineTo, outlineTo.GetFirst, "FCset", search_ANY_TEXT, 0,-1)
+'	Print "is inst2", outlineTo.Name	
+	isFCSETInstalled = Not (fcset Is Nothing)
+'	Print "is inst3", outlineTo.Name	
+End Function
+'++LotusScript Development Environment:2:2:writeINIvars:1:8
+Sub writeINIvars
+	dPrint debugCall, "writeINIvars",  "Writing sfXXX vars to NOTES.INI"
+	Call ses.setEnvironmentVar("sfFCServer",ses.currentDatabase.server)
+	Dim testDATA As String
+	testDATA=ses.GetEnvironmentString("Directory",True )         
+	If ses.currentDatabase.server>"" And (testDATA>"") And (Left(ses.currentDatabase.filepath,Len(testDATA))=testDATA) Then
+          ' this code removes full path to this DB and makes it relative to DATA directory
+		Call ses.setEnvironmentVar("sfFCDB",Right(ses.currentDatabase.filepath,Len(ses.currentDatabase.filepath)-Len(testDATA)-1) )
+	Else
+		Call ses.setEnvironmentVar("sfFCDB",ses.currentDatabase.filepath )
+	End If
+End Sub
+'++LotusScript Development Environment:2:2:copyDesignToDB:1:8
+Sub copyDesignToDB(DB As notesdatabase)
+	Dim notesView As notesView, nDC As notesDocumentCollection, doc As notesDocument
+	Set notesView  = ses.currentdatabase.GetView( "(designToCopy)")
+	Set nDC = notesView.GetAllDocumentsByKey( 1 )
+	dPrint debugCall,"copyDesignToDB","design collection count:"+Cstr(nDC.count)
+	Set doc=nDC.getfirstdocument
+	While Not doc Is Nothing
+		Call doc.copyToDatabase(DB)
+		Set doc=nDC.getnextdocument(doc)
+	Wend
+End Sub

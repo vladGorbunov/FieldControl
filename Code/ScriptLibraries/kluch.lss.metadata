@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="C62566C60041A463" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="672" sequence="39" unid="81BDADCC7A41D924C6256E1B0063B4CD">
+<created><datetime dst="true">20040115T010903,49+07</datetime></created>
+<modified><datetime dst="true">20050531T112818,63+07</datetime></modified>
+<revised><datetime dst="true">20050531T112818,62+07</datetime></revised>
+<lastaccessed><datetime dst="true">20050531T112818,62+07</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20040115T011506,36+07</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Vladislav Gorbunov/O=FieldControl Development</name></updatedby>
+<item name="$TITLE" sign="true"><text>kluch</text></item>
+<item name="$Flags"><text>s34Q</text></item>
+<item name="$PublicAccess"><text>1</text></item>
+
+</note>

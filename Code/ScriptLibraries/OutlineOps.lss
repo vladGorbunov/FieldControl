@@ -1,0 +1,49 @@
+'++LotusScript Development Environment:2:5:(Options):0:74
+Option Public
+Use "dPrint"
+Option Declare
+
+'++LotusScript Development Environment:2:5:(Forward):0:1
+Declare Function searchOldBMs(outline As notesOutline, fromEntry  As notesOutLineEntry, searchLabel$, searchAlias$, searchLevel%, eClass%) As notesOutLineEntry	
+Declare Function copyEntries(outlineFrom As notesOutline, outlineTo As notesOutline, entryFrom As NotesOutlineEntry, entryResult As NotesOutlineEntry, Byval child) As Integer
+
+'++LotusScript Development Environment:2:5:(Declarations):0:10
+Const search_ANY_TEXT="Any!text~string#that+I=hope*never%meet^in$real@outlines"
+'++LotusScript Development Environment:2:1:searchOldBMs:1:8
+Function searchOldBMs(outline As notesOutline, fromEntry  As notesOutLineEntry, searchLabel$, searchAlias$, searchLevel%, eClass%) As notesOutLineEntry	
+	'Do search down from fromEntry for .Alias AND .Label AND .Level AND .Class ; set .Level or .Class to -1 to get any level or any class; set searchLabel and searchAlias to search_ANY_TEXT to get any labels or any aliases
+	Dim Entry As notesOutLineEntry	
+	Set searchOldBMs=Nothing
+	dPrint debugCall, "searchOldBMs", "start search from entry:"+ fromEntry.label+" alias:"+fromEntry.Alias
+	Set Entry=fromEntry
+	While Not Entry Is Nothing
+		dPrint debugAll,"searchOldBMs",  "watch entry:"+ Entry.label+" alias:"+Entry.Alias+" entryClass:"+Cstr(entry.entryClass)+" entry.level:"+Cstr(entry.level)
+		If (Entry.Alias=searchAlias Or searchAlias=search_ANY_TEXT) And (Entry.Label=searchLabel Or searchLabel=search_ANY_TEXT) And (searchLevel=-1 Or entry.level=searchLevel) And (eClass=-1 Or entry.entryClass=eClass) Then
+			Set searchOldBMs=Entry
+			dPrint debugCall, "searchOldBMs", "return entry:"+ Entry.label+" alias:"+Entry.Alias
+			Exit Function
+		End If
+		Set Entry=outline.getnext(Entry)
+	Wend
+	dPrint debugCall, "searchOldBMs", "return NOTHING entry"
+End Function
+
+'++LotusScript Development Environment:2:1:copyEntries:1:8
+Function copyEntries(outlineFrom As notesOutline, outlineTo As notesOutline, entryFrom As NotesOutlineEntry, entryResult As NotesOutlineEntry, Byval child) As Integer
+	Dim newFolder As notesoutlineentry, saveResult As notesoutlineentry, counter%
+	While Not entryFrom Is Nothing
+		dPrint debugCall,"copyEntries",">"+entryFrom.label+"    >"+entryResult.label+" child?"+Cstr(child)
+		If entryFrom.hasChildren Then
+			Set entryResult = outlineTo.CreateEntryFrom(entryFrom,entryResult,True, child)
+			dPrint debugCall, ">>", entryResult.label
+			Call copyEntries(outlineFrom, outlineTo, outlineFrom.GetNext(entryFrom),entryResult,True)
+			dPrint debugCall, "<<", entryResult.label
+		Else
+			Set entryResult=outlineTo.CreateEntryFrom(entryFrom,entryResult,True, child)
+		End If
+		child=False		
+		Set entryFrom=outlineFrom.GetNextSibling(entryFrom) 
+		counter=counter+1
+	Wend
+	copyEntries=counter
+End Function

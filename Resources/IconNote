@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
+ maintenanceversion='1.0' replicaid='C62566C60041A463'>
+<noteinfo noteid='122' unid='4178E6F6CC6F178FC62566C60041A516' sequence='37'>
+<created><datetime dst='true'>19981124T185701,02+07</datetime></created>
+<modified><datetime dst='true'>20031227T012239,76+07</datetime></modified>
+<revised><datetime dst='true'>20031111T225454,36+07</datetime></revised>
+<lastaccessed><datetime dst='true'>20031227T012239,75+07</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20031227T012239,75+07</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Vladislav Gorbunov/O=FieldControl Development</name></updatedby>
+<item name='$RevisionsLimit'><number>20</number></item>
+<item name='$UpdatedByLimit'><number>20</number></item>
+<item name='IconBitmap' summary='true'>
+<rawitemdata type='6'>
+AiAgAQAA//////////////////////////////////////////////////////jmtc33Wq2199qs
+tffmRE33f+g9+P/wHf//4A///8AD//+AAf//AAHxsgAA+64AAfuigAP5tsAH+v7gD/C+4B////g/
+///8f////v////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAERAAEQAQEAEBAAEQAQAAAQABAQAQEBAQAQAQAQEAAAEAAAEAEBAQEAEAEAEBA
+AABAAAAEQARAREBEAEQAQAAAQABAAAAAAAQAz8AAAEAAAAREAAAAAAAADPb8AABAAAAAAAAAAAAA
+AMZvb8AAAAAAAAAAAAAAAAxm9vb8DwAAAAAAAAAAAADBZmZvb8DwAAAAAAAAAAAMEWZm9vb8AAAA
+REAEAEQEwURGZmZvb8AAAAQABAQABMQRQWZm9vbAAAAEAAQERAQEEUFmZmZsAAAABEAEAEAEAERB
+EWZmwAAAAAQEAAAABAAMQWFmbAAAAABERAQAAAQABEEREcAAAAAAAAAAAAAAAAAMEWwAAAAAAAAA
+AAAAAAAAAMHAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$TITLE'><text>gonzo MFD
+#1gonzo</text></item>
+<item name='$FlagsNoRefresh'><text/></item>
+<item name='$Flags'><text>p</text></item></note>
+

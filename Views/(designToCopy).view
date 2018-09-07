@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C62566C60041A463'>
+<noteinfo noteid='56a' unid='635934414D8EDD7C46256BD90071B03E' sequence='40'>
+<created><datetime>20020616T024146,86+06</datetime></created>
+<modified><datetime dst='true'>20040801T140542,74+07</datetime></modified>
+<revised><datetime dst='true'>20040801T140542,73+07</datetime></revised>
+<lastaccessed><datetime dst='true'>20040801T140542,73+07</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20031227T012241,55+07</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=tester/O=tester</name><name>CN=Vladislav Gorbunov/O=Fieconde</name><name
+>CN=Vladislav Gorbunov/O=FieldControl Development</name></updatedby>
+<item name='$FormatNote' summary='true'>
+<rawitemdata type='4'>
+AQAxvg9U3B58S+qkQQDGZiXG
+</rawitemdata></item>
+<item name='$Collation8' summary='true'>
+<rawitemdata type='2'>
+DwABAABEAWYAAAACACQy
+</rawitemdata></item>
+<item name='$FormulaClass' sign='true'><text>8191</text></item>
+<item name='$TITLE' sign='true'><text>(designToCopy)|(imageResources)</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+vAACACQAAgAkNAEAAQAwAAUADABkZXNpZ25Ub0NvcHkiAlgBAwACABgABgAkVGl0bGUFAAYAJFRp
+dGxlAwACABQAAgAkM34AAQACAE5UogIDAAUAKgAlAAUAAgAGAAIACQAEACQ0JFRpdGxlJDMkQ29u
+ZmxpY3QkUkVGAAQABAAAACoABQAGACRUSVRMRWgBBQAQACRkZXNpZ25lclZlcnNpb25oARwCAwAH
+ABIADAAJTDFTM1M1UzZTOFM=
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+JQADAABEgWYAAAACAJhmAAIABgABZgAIAAIAJDQkVGl0bGUkMw==
+</rawitemdata></item>
+<item name='$Collation1' summary='true'>
+<rawitemdata type='2'>
+EwABAABEiGYAAAAGACRUaXRsZQ==
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQADAAYAiAgAAFZDBQACAAcAMgAAADAAAQAACAAAAAAAAAAAAAICAAAAVkMAAQYABQAaAAAAnwAB
+AAAIAAEAAAAAAAAAAgIAAABWQwUAAgAGACIAAAA/AAEAAAgAAAAAAAAAAAACAgAAACQ0dG9Db3B5
+PzIAAgAkAAIAJDQBAAEAMAAFAAwAZGVzaWduVG9Db3B5IgJYAQMABwAMAAUACTNTNFMAJFRpdGxl
+VGl0bGUaAAIAGAAGACRUaXRsZQUABgAkVGl0bGUDACQzTm90ZUlEIgACABQAAgAkM34AAQACAE5U
+ogIDAAcADAAFAAkwUzBFACYAAQAAAAEBAAkBAAAKAQEOCgAALwCtKwIAAQABAAAAAAAAAAAAV0MB
+AQAJAAAAAAAAAAAAAAAAAAAAAAEABAAAAAAA//8AAAAAAAAAAAAAAAAAAFdDAQEACQAAAAAAAAAA
+AAAAAAAAAAAAAAQAAAAAAP//AAAAAAAAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAD//wAAAAAAAAAAAAAAAAAAQgAAAAAAAQD///8AAQD39/cAAQAAAAAAAAAAAAAAAAABAP//
+/wABAP///wAAAAEAAAAAAAEAgICAAAAAAAAAAAAACAAAAAAAAQA=
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text>$FormulaClass to 8191, noteID is 1562</text></item>
+<item name='$Flags'><text>Y</text></item>
+<item name='$DesignerVersion'><text>6</text></item>
+<item name='$V5ACTIONS' sign='true'>
+<rawitemdata type='1'>
+vRwjAAAAAQABAAAAAQAAAAAAAAAAAAAACAACAHn/bAABANTQyAABAAAAAAAJAAAAAAABANTQyAAA
+AB8AAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPz/OgAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAC+/yYAAAAFAAAAnQEAAAsAAAAAAAAAQ2F0ZWdvcmlfemVm
+AQBOfL7/KAAAAAUAAACdAQAADgAAAAAAAABfRWRpdCBEb2N1bWVudAIAAgq+/ygAAAAFAAAAnQEA
+AA4AAAAAAAAAX1NlbmQgRG9jdW1lbnQDAAMKvv8iAAAABQAAAJ0BAAAIAAAAAAAAAF9Gb3J3YXJk
+BAAECr7/LAAAAAUAAACdAQAAEgAAAAAAAABfTW92ZSBUbyBGb2xkZXIuLi4FAD18vv8uAAAABQAA
+AJ0BAAATAAAAAAAAAF9SZW1vdmUgRnJvbSBGb2xkZXL/BgA+fA==
+</rawitemdata></item>
+<item name='$ACTIONS' sign='true'>
+<rawitemdata type='1'>
+vRwjAAAAAQABAAAAAQAAAAAAAAAAAAAACAACAL7/JgAAAAUAAACdAQAACwAAAAAAAABDYXRlZ29y
+aV96ZQABAE58vv8oAAAABQAAAJ0BAAAOAAAAAAAAAF9FZGl0IERvY3VtZW50AgACCr7/KAAAAAUA
+AACdAQAADgAAAAAAAABfU2VuZCBEb2N1bWVudAMAAwq+/yIAAAAFAAAAnQEAAAgAAAAAAAAAX0Zv
+cndhcmQEAAQKvv8sAAAABQAAAJ0BAAASAAAAAAAAAF9Nb3ZlIFRvIEZvbGRlci4uLgUAPXy+/y4A
+AAAFAAAAnQEAABMAAAAAAAAAX1JlbW92ZSBGcm9tIEZvbGRlchYGAD58
+</rawitemdata></item></note>
+

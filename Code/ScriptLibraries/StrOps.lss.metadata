@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="C62566C60041A463" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="662" sequence="8" unid="40B7E68B68E86CAFC6256E1A0063DE5D">
+<created><datetime dst="true">20040114T011049,89+07</datetime></created>
+<modified><datetime dst="true">20041017T200034,57+07</datetime></modified>
+<revised><datetime dst="true">20041017T200034,56+07</datetime></revised>
+<lastaccessed><datetime dst="true">20041017T200034,56+07</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20040114T011051,36+07</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Vladislav Gorbunov/O=Inmarko/C=RU</name><name>CN=Vladislav Gorbunov/O=FieldControl Development</name></updatedby>
+<item name="$TITLE" sign="true"><text>StrOps</text></item>
+<item name="$Flags"><text>s34Q</text></item>
+<item name="$PublicAccess"><text>1</text></item>
+
+</note>
