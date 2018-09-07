@@ -1,0 +1,21 @@
+' General Error handler for any procedure. See the last line also...
+     If debugNoErrorH Then Goto skipErrh     
+     errCount=0
+     On Error Goto errh
+     Goto skipErrh
+errh: 
+     If (Err=91) Or (Err=183) Then
+          psblErr="(No such item or document?)"
+     Else
+          psblErr=""
+     End If
+     psblErr="Error" & Str(Err) & ": " & Error$ & " " & psblErr
+     Print psblErr    
+     errCount=errCount+1
+     Resume Next
+skipErrh:
+     
+' here first line for procedure:
+' %include "errh.lss"
+'here last line for procedure:
+'     If errCount>0 Then Print "Done with ERRORS:";errCount

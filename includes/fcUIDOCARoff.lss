@@ -1,0 +1,7 @@
+'This code turns off UIDOC.autoreload and stores its state
+
+	Dim saveReload
+	saveReload=uidoc.autoreload
+	uidoc.autoreload=False	
+
+'do not forget to INCLUDE fcUIDOCARon.lss

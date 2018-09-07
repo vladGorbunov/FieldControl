@@ -1,0 +1,9 @@
+'This code restores state of UIDOC.autoreload and does reald if necessary
+'do not forget to INCLUDE fcUIDOCARoff.lss in beginnig
+
+	If isDebug=1 Then Print "saveReload=";saveReload
+	If saveReload Then 	' if not, suppose uidoc.reload will be issued later
+		If isDebug=1 Then  Print "... so we do reload"
+		Call uidoc.reload
+		uidoc.autoreload=True
+	End If
