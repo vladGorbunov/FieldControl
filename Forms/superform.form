@@ -1262,7 +1262,7 @@ Sub DisplayArrays
 '     Stop
 	Dim j As Integer
 	
-'%INCLUDE "fcUIDOCARoff"
+%INCLUDE "fcUIDOCARoff"
 	
 	itemname.Values=""      'clearing item table     
 	itemtype.Values=""
@@ -1292,7 +1292,7 @@ Sub DisplayArrays
 	
 	If UIDoc.FIELDGETTEXT("totality")&gt;"" Then Call showInListFormat		
 	
-'%INCLUDE "fcUIDOCARon"
+%INCLUDE "fcUIDOCARon"
 	
 	If isDebug=1 Then  Print "Exited to DISPLAY"
 	Exit Sub
